@@ -1,0 +1,28 @@
+[gd_scene format=4 uid="uid://7ge0dqsx380x"]
+
+[ext_resource type="TileSet" uid="uid://ddf3y2w4qxstj" path="res://scenes/tile_set.tres" id="1_bovvr"]
+[ext_resource type="Script" uid="uid://b0nh71e0bkpnk" path="res://scenes/levels/level.gd" id="1_xb4v1"]
+[ext_resource type="PackedScene" uid="uid://dxd7xcerxeuqh" path="res://scenes/entities/combined_racoon.tscn" id="2_w7c3h"]
+[ext_resource type="PackedScene" uid="uid://nxra4fmrtyxg" path="res://scenes/interactables/door.tscn" id="3_b2cq8"]
+
+[node name="Level" type="Node2D" unique_id=1156120503]
+script = ExtResource("1_xb4v1")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1663362489]
+tile_map_data = PackedByteArray("AAAKAAAAAAABAAAAAAAKAP//AAABAAAAAAAKAP7/AAABAAAAAAALAAAAAAABAAAAAAD7/wAAAAABAAAAAAD7////AAABAAAAAAD7//7/AAABAAAAAAAMAAAAAAABAAAAAAAKAPz/AAABAAAAAAAKAP3/AAABAAAAAAALAPz/AAABAAAAAAALAP3/AAABAAAAAAAKAPv/AAABAAAAAAALAPv/AAABAAAAAAAMAPv/AAABAAAAAAAMAPz/AAABAAAAAAAMAP3/AAABAAAAAAANAAAAAAABAAAAAAAOAAAAAAABAAAAAAAPAAAAAAABAAAAAAAQAAAAAAABAAAAAAARAAAAAAABAAAAAAASAAAAAAABAAAAAAATAAAAAAABAAAAAAAUAAAAAAABAAAAAAAVAAAAAAABAAAAAAAWAAAAAAABAAAAAAAJAAAAAAABAAAAAAAIAAAAAAABAAAAAAAHAAAAAAABAAAAAAAGAAAAAAABAAAAAAAFAAAAAAABAAAAAAAEAAAAAAABAAAAAAADAAAAAAABAAAAAAACAAAAAAABAAAAAAABAAAAAAABAAAAAAAAAAAAAAABAAAAAAD//wAAAAABAAAAAAD+/wAAAAABAAAAAAD9/wAAAAABAAAAAAD8/wAAAAABAAAAAAD7//3/AAABAAAAAAD7//z/AAABAAAAAAD7//v/AAABAAAAAAACAP//AQAAAAAAAQALAP//AQAAAAAAAQAEAP7/AAADAAAAAAAEAP//AQAAAAAAAgAGAP7/AAADAAAAAAAGAP//AQAAAAAAAgA=")
+tile_set = ExtResource("1_bovvr")
+
+[node name="CombinedRacoon" parent="." unique_id=1099982837 instance=ExtResource("2_w7c3h")]
+position = Vector2(0, -152)
+
+[node name="Camera2D" type="Camera2D" parent="CombinedRacoon" unique_id=542419718]
+zoom = Vector2(0.5, 0.5)
+
+[node name="Door" parent="." unique_id=473722560 instance=ExtResource("3_b2cq8")]
+position = Vector2(1088, -128)
+
+[node name="Door2" parent="." unique_id=1260345935 instance=ExtResource("3_b2cq8")]
+position = Vector2(1856, -128)
+
+[node name="Door3" parent="." unique_id=220743105 instance=ExtResource("3_b2cq8")]
+position = Vector2(2552, -127)

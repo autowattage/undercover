@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://xq8pkrfjrlsv"]
+
+[ext_resource type="Texture2D" uid="uid://bbndaudv4g8tk" path="res://assets/icon.svg" id="1_wyjai"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uw0da"]
+radius = 64.0
+
+[node name="Gun" type="Node2D" unique_id=2054842705]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=578893621]
+position = Vector2(24, 0)
+scale = Vector2(0.5, 0.125)
+texture = ExtResource("1_wyjai")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=118054230]
+position = Vector2(24, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=376132719]
+shape = SubResource("CircleShape2D_uw0da")
