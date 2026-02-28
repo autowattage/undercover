@@ -1,0 +1,34 @@
+[gd_resource type="TileSet" format=3 uid="uid://ddf3y2w4qxstj"]
+
+[ext_resource type="Texture2D" uid="uid://ctba26b32xuui" path="res://assets/tileset.png" id="1_5mn4h"]
+[ext_resource type="PackedScene" uid="uid://chr4thxd7ypme" path="res://scenes/interactables/vent.tscn" id="2_htojp"]
+[ext_resource type="PackedScene" uid="uid://nxra4fmrtyxg" path="res://scenes/interactables/door.tscn" id="3_spsv0"]
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_spsv0"]
+tile_data = PackedInt32Array(0, 196608, 0, 65536, 1, 131072)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_spsv0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w7c3h"]
+texture = ExtResource("1_5mn4h")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+3:0/0 = 0
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_spsv0"]
+resource_name = "Objects"
+scenes/1/scene = ExtResource("2_htojp")
+scenes/2/scene = ExtResource("3_spsv0")
+
+[resource]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_spsv0")
+sources/0 = SubResource("TileSetAtlasSource_w7c3h")
+sources/1 = SubResource("TileSetScenesCollectionSource_spsv0")
+pattern_0 = SubResource("TileMapPattern_spsv0")

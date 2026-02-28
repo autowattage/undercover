@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://nlna843fqb2l"]
+
+[ext_resource type="Script" uid="uid://d1dw3nqd5gijl" path="res://scenes/entities/player_entity.gd" id="1_7nbo1"]
+[ext_resource type="Texture2D" uid="uid://dlmbah3qk1vee" path="res://assets/raccoon.png" id="2_llluc"]
+[ext_resource type="Script" uid="uid://cqnbkier15avq" path="res://scenes/components/health_component.gd" id="3_fjq04"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rp24y"]
+radius = 48.0
+
+[node name="Raccoon1" type="CharacterBody2D" unique_id=1099982837]
+collision_layer = 2
+script = ExtResource("1_7nbo1")
+movement_speed = 500.0
+metadata/_custom_type_script = "uid://cm8xa62iojq0x"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1627202162]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_llluc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1859256529]
+shape = SubResource("CircleShape2D_rp24y")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=810016079]
+script = ExtResource("3_fjq04")
+metadata/_custom_type_script = "uid://cqnbkier15avq"
