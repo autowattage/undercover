@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://t42oc1g0wh58"]
+
+[ext_resource type="Texture2D" uid="uid://3a1eexy2sl7s" path="res://assets/elevator.png" id="1_8o2wm"]
+
+[node name="elevator" type="Node2D" unique_id=874072024]
+
+[node name="bg" type="ColorRect" parent="." unique_id=1524095527]
+offset_right = 1950.0
+offset_bottom = 1113.0
+color = Color(0, 0, 0, 1)
+
+[node name="elevator" type="Sprite2D" parent="." unique_id=1151142731]
+position = Vector2(960, 540)
+texture = ExtResource("1_8o2wm")
+
+[node name="black-overlay" type="ColorRect" parent="." unique_id=743261507]
+visible = false
+offset_right = 1950.0
+offset_bottom = 1113.0
+color = Color(0, 0, 0, 1)
