@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b0nh71e0bkpnk" path="res://scenes/levels/level.gd" id="1_xb4v1"]
 [ext_resource type="PackedScene" uid="uid://dxd7xcerxeuqh" path="res://scenes/entities/combined_racoon.tscn" id="2_w7c3h"]
 [ext_resource type="PackedScene" uid="uid://nxra4fmrtyxg" path="res://scenes/interactables/door.tscn" id="3_b2cq8"]
+[ext_resource type="PackedScene" uid="uid://dpkw8kusqumh0" path="res://scenes/entities/guard.tscn" id="5_urvlt"]
 
 [node name="Level" type="Node2D" unique_id=1156120503]
 script = ExtResource("1_xb4v1")
@@ -26,3 +27,6 @@ position = Vector2(1856, -128)
 
 [node name="Door3" parent="." unique_id=220743105 instance=ExtResource("3_b2cq8")]
 position = Vector2(2552, -127)
+
+[node name="Guard" parent="." unique_id=1899238474 instance=ExtResource("5_urvlt")]
+position = Vector2(-400, -154)

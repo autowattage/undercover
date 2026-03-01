@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://dpkw8kusqumh0"]
 
-[ext_resource type="Script" uid="uid://d1dw3nqd5gijl" path="res://scenes/entities/player_entity.gd" id="1_c4p50"]
+[ext_resource type="Script" uid="uid://bp2388xclccgj" path="res://scenes/entities/guard.gd" id="1_aka77"]
 [ext_resource type="Texture2D" uid="uid://bbndaudv4g8tk" path="res://assets/icon.svg" id="2_c4p50"]
 [ext_resource type="Script" uid="uid://cqnbkier15avq" path="res://scenes/components/health_component.gd" id="3_j4jik"]
+[ext_resource type="PackedScene" uid="uid://yupmfq5l5s5n" path="res://scenes/interactables/attackable_area.tscn" id="5_j4jik"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c4p50"]
 radius = 64.0
@@ -10,8 +11,7 @@ height = 252.0
 
 [node name="Guard" type="CharacterBody2D" unique_id=1099982837]
 collision_layer = 2
-script = ExtResource("1_c4p50")
-movement_speed = 500.0
+script = ExtResource("1_aka77")
 metadata/_custom_type_script = "uid://cm8xa62iojq0x"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1627202162]
@@ -20,6 +20,8 @@ texture = ExtResource("2_c4p50")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1859256529]
 shape = SubResource("CapsuleShape2D_c4p50")
+
+[node name="AttackableArea" parent="." unique_id=473722560 instance=ExtResource("5_j4jik")]
 
 [node name="HealthComponent" type="Node" parent="." unique_id=810016079]
 script = ExtResource("3_j4jik")

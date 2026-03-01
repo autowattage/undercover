@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://7ge0dqsx380x" path="res://scenes/levels/level.tscn" id="1_cj8ld"]
 [ext_resource type="PackedScene" uid="uid://mhov8ypmv2rd" path="res://scenes/levels/sublevel.tscn" id="2_opkwl"]
+[ext_resource type="Texture2D" uid="uid://bbndaudv4g8tk" path="res://assets/icon.svg" id="3_iky1b"]
 
 [node name="Node" type="Node" unique_id=367954716]
 
@@ -10,3 +11,33 @@ position = Vector2(110, -61)
 
 [node name="SubLevel" parent="." unique_id=1887091631 instance=ExtResource("2_opkwl")]
 visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=320824909]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=173182853]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control" unique_id=874182033]
+layout_mode = 1
+offset_right = 392.0
+offset_bottom = 128.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/HBoxContainer" unique_id=1150685100]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("3_iky1b")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Control/HBoxContainer" unique_id=1698624133]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("3_iky1b")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/Control/HBoxContainer" unique_id=737014407]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("3_iky1b")
