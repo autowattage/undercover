@@ -30,8 +30,8 @@ var action := Action.NONE
 
 @export var faction: Factions = Factions.FACTION_NEUTRAL
 
-#@export var DamageParticles = preload("res://particle_effects/blood.tscn")
-#@export var DeathParticles = preload("res://particle_effects/blood.tscn")
+@export var DamageParticles = preload("res://scenes/particles/blood.tscn")
+@export var DeathParticles = preload("res://scenes/particles/blood.tscn")
 
 #@export_group("Targets")
 #@export var targets_player: bool = true
@@ -72,12 +72,12 @@ func setup():
 	#if MovementComp:
 		#MovementComp
 
-	#if DamageParticles:
-		#DamageParticles = DamageParticles.instantiate()
-		#add_child(DamageParticles)
-	#if DeathParticles:
-		#DeathParticles = DeathParticles.instantiate()
-		#add_child(DeathParticles)
+	if DamageParticles:
+		DamageParticles = DamageParticles.instantiate()
+		add_child(DamageParticles)
+	if DeathParticles:
+		DeathParticles = DeathParticles.instantiate()
+		add_child(DeathParticles)
 
 	add_to_group( get_faction() )
 	add_to_group("entities")
@@ -91,7 +91,7 @@ func _on_hitbox_hit(damage: Damage):
 
 # Damage effects
 func _on_health_damaged(amount):
-	#if DamageParticles: DamageParticles.emitting = true
+	if DamageParticles: DamageParticles.emitting = true
 
 	var t = create_tween()
 	t.tween_property(self, "modulate", Color(1, 0, 0), 0.1)
@@ -110,16 +110,16 @@ func _on_health_zero():
 # Corpse, death effects, deletion
 func kill():
 	#print(self, " killed.")
-	$Sprite2D.hide()
-	$HitboxComponent.queue_free()
-	$CollisionShape2D.queue_free()
+	if has_node("Sprite2D"): $Sprite2D.hide()
+	if has_node("HitboxComponent"): $HitboxComponent.queue_free()
+	if has_node("CollisionShape2D"): $CollisionShape2D.queue_free()
 	self.velocity = Vector2.ZERO
 
 	#if self is Player: get_parent().game_loss()
 	entity_death.emit( self )
-	#if DeathParticles:
-		#DeathParticles.emitting = true
-		#await DeathParticles.finished
+	if DeathParticles:
+		DeathParticles.emitting = true
+		await DeathParticles.finished
 	queue_free()
 
 
