@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://chr4thxd7ypme"]
 
 [ext_resource type="Script" uid="uid://cc3bkw6wrmp5q" path="res://scenes/interactables/vent.gd" id="1_7jxis"]
-[ext_resource type="Texture2D" uid="uid://cytkrwr7xsneb" path="res://assets/vent.png" id="2_jgxwo"]
+[ext_resource type="Texture2D" uid="uid://cytkrwr7xsneb" path="res://assets/levels/vent.png" id="2_jgxwo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w4xns"]
 size = Vector2(128, 128)

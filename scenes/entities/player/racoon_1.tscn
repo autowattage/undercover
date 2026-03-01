@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://nlna843fqb2l"]
+
+[ext_resource type="Script" uid="uid://d1dw3nqd5gijl" path="res://scenes/entities/player/player_entity.gd" id="1_7nbo1"]
+[ext_resource type="Script" uid="uid://cqnbkier15avq" path="res://scenes/components/health_component.gd" id="3_fjq04"]
+[ext_resource type="Texture2D" uid="uid://dcvpssff85qj5" path="res://assets/raccoons/Untitled44_20260228182235.png" id="4_nu1re"]
+[ext_resource type="Texture2D" uid="uid://cgqx6dh6mupcf" path="res://assets/raccoons/Untitled44_20260228182227.png" id="5_vlknb"]
+[ext_resource type="Texture2D" uid="uid://c02m0csenb8qg" path="res://assets/raccoons/Untitled44_20260228182229.png" id="6_d03ff"]
+[ext_resource type="Texture2D" uid="uid://ce5o6bpuwyu4p" path="res://assets/raccoons/Untitled44_20260228182231.png" id="7_i82t3"]
+[ext_resource type="Texture2D" uid="uid://dyud6h7v8silt" path="res://assets/raccoons/Untitled44_20260228182232.png" id="8_j218k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3fov1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_nu1re")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_vlknb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_d03ff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_i82t3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_j218k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nu1re")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rp24y"]
+radius = 48.0
+
+[node name="Raccoon1" type="CharacterBody2D" unique_id=1099982837]
+collision_layer = 2
+script = ExtResource("1_7nbo1")
+movement_speed = 500.0
+metadata/_custom_type_script = "uid://cm8xa62iojq0x"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=578838623]
+scale = Vector2(-0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_3fov1")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1859256529]
+shape = SubResource("CircleShape2D_rp24y")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=810016079]
+script = ExtResource("3_fjq04")
+metadata/_custom_type_script = "uid://cqnbkier15avq"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1557556973]
+zoom = Vector2(0.5, 0.5)

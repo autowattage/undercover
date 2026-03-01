@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bck2pbssc2c0"]
+
+[ext_resource type="Texture2D" uid="uid://bbndaudv4g8tk" path="res://assets/icon.svg" id="1_kbb6n"]
+[ext_resource type="Script" uid="uid://c2u8xr0rrax7t" path="res://scenes/entities/projectiles/projectile.gd" id="1_onq88"]
+[ext_resource type="Script" uid="uid://bh6cqtnko4j6x" path="res://scenes/components/attack_component.gd" id="3_ewt5w"]
+[ext_resource type="Script" uid="uid://cqnbkier15avq" path="res://scenes/components/health_component.gd" id="4_eyncd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3uisd"]
+
+[node name="Projectile" type="CharacterBody2D" unique_id=1763087187]
+collision_layer = 8
+collision_mask = 2
+input_pickable = true
+script = ExtResource("1_onq88")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=984188101]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_kbb6n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=438639075]
+shape = SubResource("CircleShape2D_3uisd")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=591446283]
+script = ExtResource("4_eyncd")
+metadata/_custom_type_script = "uid://cqnbkier15avq"
+
+[node name="AttackComponent" type="Node" parent="." unique_id=2050379689]
+script = ExtResource("3_ewt5w")
+metadata/_custom_type_script = "uid://bh6cqtnko4j6x"

@@ -67,8 +67,8 @@ func setup():
 	if HealthComp:
 		HealthComp.health_damaged.connect( _on_health_damaged )
 		HealthComp.health_zero.connect( _on_health_zero )
-	# if AttackComp:
-	# 	AttackComp
+	 #if AttackComp:
+	 	#AttackComp
 	#if MovementComp:
 		#MovementComp
 
@@ -83,7 +83,7 @@ func setup():
 	add_to_group("entities")
 
 
-func _on_hitbox_hit(damage: Damage):
+func _on_hitbox_hit(damage: int):
 	if damageable:
 		HealthComp.apply_damage(damage)
 	else: print(self, " is immune.")
@@ -128,7 +128,7 @@ func get_health():
 
 
 func get_damage():
-	if AttackComp: return AttackComp.DamageComp
+	if AttackComp: return AttackComp.damage
 
 
 func get_faction():

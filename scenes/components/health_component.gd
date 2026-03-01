@@ -13,8 +13,8 @@ func _ready() -> void:
 	pass
 
 
-func apply_damage(damage_comp):
-	var amount = damage_comp.value
+func apply_damage(amount):
+	#var amount = damage_comp.value
 	# Handle damage calculations
 	# Handle damage modifiers and types
 	damage(amount)

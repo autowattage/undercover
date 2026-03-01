@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cytkrwr7xsneb"
-path="res://.godot/imported/vent.png-bc1556c8c2d5bbc47e12e350ed3faa2c.ctex"
+uid="uid://wju7ydet8xsv"
+path="res://.godot/imported/slash.svg-7cb001c5b1f1288a51b961ac250c2e53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vent.png"
-dest_files=["res://.godot/imported/vent.png-bc1556c8c2d5bbc47e12e350ed3faa2c.ctex"]
+source_file="res://scenes/items/weapons/melee/slash.svg"
+dest_files=["res://.godot/imported/slash.svg-7cb001c5b1f1288a51b961ac250c2e53.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

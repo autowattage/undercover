@@ -27,10 +27,10 @@ func _process(_delta: float) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	#if event.is_action_pressed("use"):
-		#using_item = true
-	#if event.is_action_released("use"):
-		#using_item = false
+	if event.is_action_pressed("use_character_ability"):
+		using_item = true
+	if event.is_action_released("use_character_ability"):
+		using_item = false
 
 	if event is InputEventKey:
 		var key = event.as_text_key_label()
@@ -108,14 +108,11 @@ func aim_item():
 		#print(rad_to_deg(ang))
 		#print(angle)
 		#if angle >= 0:
-		if angle < -90 or angle > 90:
-			#self.scale.x = -1
-			$Sprite2D.flip_h = false
-			#self
+		if angle > -90 or angle < 90:
+			$AnimatedSprite2D.flip_h = false
 		#if angle <= 0:
 		else:
-			#self.scale.x = 1
-			$Sprite2D.flip_h = true
+			$AnimatedSprite2D.flip_h = true
 
 
 func equip_item(item):

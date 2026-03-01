@@ -7,12 +7,21 @@ func _interact():
 	print(get_parent())
 
 	if Game.sublevel_active:
-		Game.player.reparent( Game.level)
+		#Game.player.reparent( Game.level)
+		var racoon = preload("res://scenes/entities/player/combined_racoon.tscn").instantiate()
+		Game.player.queue_free()
+		Game.player = racoon
+		Game.level.add_child(Game.player)
+
 		Game.sublevel_active = false
 		Game.level.enable()
 		Game.sublevel.disable()
 	else:
-		Game.player.reparent( Game.sublevel)
+		var racoon = preload("res://scenes/entities/player/racoon_1.tscn").instantiate()
+		Game.player.queue_free()
+		Game.player = racoon
+		Game.sublevel.add_child(Game.player)
+		#Game.player.reparent( Game.sublevel)
 		Game.sublevel_active = true
 		Game.sublevel.enable()
 		Game.level.disable()

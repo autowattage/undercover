@@ -19,16 +19,17 @@ func _physics_process(_delta: float) -> void:
 	#HealthComp.apply_damage(damage)
 
 
+# This does not run.
+# Projectiles are detected by other entities which will manually damage the projectile.
 #func _on_hitbox_hit(damage):
 	#if damageable:
 		#HealthComp.apply_damage(damage)
-		#print("ASKDJN")
 		##kill()
 	#else: print(self, " is immune.")
 
 
 # Projectiles ignore health damage effects
-func _on_health_damaged(amount):
+func _on_health_damaged(_amount):
 	pass
 
 # Projectiles ignore all other death effects
