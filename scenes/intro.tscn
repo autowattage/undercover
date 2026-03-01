@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://nse67t0ydbtf"]
+
+[ext_resource type="Script" uid="uid://d1jxnyngwi1g5" path="res://scenes/intro.gd" id="1_4bx60"]
+[ext_resource type="Texture2D" uid="uid://yb6l0lyat7r0" path="res://assets/Screenshot 2026-02-28 191520.png" id="2_4bx60"]
+[ext_resource type="Texture2D" uid="uid://mddp7s47k6fn" path="res://assets/03-01-2026-0610.png" id="2_i2l1n"]
+[ext_resource type="Texture2D" uid="uid://c5huibxwm2sp4" path="res://assets/image.png" id="3_i2l1n"]
+
+[node name="Intro" type="Control" unique_id=1085302242]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4bx60")
+
+[node name="bg" type="ColorRect" parent="." unique_id=1524095527]
+layout_mode = 0
+offset_right = 1950.0
+offset_bottom = 1113.0
+color = Color(0, 0, 0, 1)
+
+[node name="Splash" type="TextureRect" parent="." unique_id=1296264237]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_i2l1n")
+
+[node name="Label" type="Label" parent="Splash" unique_id=377953609]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -197.0
+offset_right = 815.0
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.29803923, 0.24313726, 0.23137255, 1)
+theme_override_constants/outline_size = 32
+theme_override_font_sizes/font_size = 144
+text = "Undercover"
+
+[node name="scene" type="TextureRect" parent="." unique_id=697946316]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -959.49994
+offset_top = -599.5
+offset_right = 959.5
+offset_bottom = 599.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4bx60")
+
+[node name="scene2" type="TextureRect" parent="." unique_id=984197657]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -500.0
+offset_right = 400.00012
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_i2l1n")
+
+[node name="black-overlay" type="ColorRect" parent="." unique_id=743261507]
+layout_mode = 0
+offset_right = 1950.0
+offset_bottom = 1113.0
+color = Color(0, 0, 0, 1)

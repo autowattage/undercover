@@ -8,5 +8,7 @@ signal door_used(door: Door)
 
 func _interact():
 	print("Door used")
+	Game.door_entered.emit()
 	door_used.emit(self)
+
 	pass

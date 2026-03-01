@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dw7nfkb1ovd54" path="res://assets/combined_raccoon/Untitled41_20260228161228.png" id="4_gqhbb"]
 [ext_resource type="Texture2D" uid="uid://dfex4nrooguay" path="res://assets/combined_raccoon/Untitled41_20260228161232 (1).png" id="5_yf8u6"]
 [ext_resource type="PackedScene" uid="uid://xq8pkrfjrlsv" path="res://scenes/items/weapons/ranged/gun.tscn" id="7_bhb32"]
+[ext_resource type="Script" uid="uid://d0y3o51r8gh1i" path="res://scenes/components/hitbox_component.gd" id="8_bd6ev"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xjj7w"]
 animations = [{
@@ -40,7 +41,7 @@ animations = [{
 size = Vector2(128, 256)
 
 [node name="CombinedRacoon" type="CharacterBody2D" unique_id=1099982837 node_paths=PackedStringArray("equipped_weapon")]
-collision_layer = 2
+collision_layer = 4
 script = ExtResource("1_rp24y")
 movement_speed = 500.0
 equipped_weapon = NodePath("Gun")
@@ -67,3 +68,13 @@ position = Vector2(9, -79)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=886254202]
 zoom = Vector2(0.5, 0.5)
+
+[node name="HitboxComponent" type="Area2D" parent="." unique_id=1568767520]
+collision_layer = 4
+collision_mask = 8
+script = ExtResource("8_bd6ev")
+metadata/_custom_type_script = "uid://d0y3o51r8gh1i"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=1948808632]
+position = Vector2(-3, -45)
+shape = SubResource("RectangleShape2D_0vfg7")

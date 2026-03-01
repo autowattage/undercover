@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c02m0csenb8qg" path="res://assets/raccoons/Untitled44_20260228182229.png" id="6_d03ff"]
 [ext_resource type="Texture2D" uid="uid://ce5o6bpuwyu4p" path="res://assets/raccoons/Untitled44_20260228182231.png" id="7_i82t3"]
 [ext_resource type="Texture2D" uid="uid://dyud6h7v8silt" path="res://assets/raccoons/Untitled44_20260228182232.png" id="8_j218k"]
+[ext_resource type="Script" uid="uid://d0y3o51r8gh1i" path="res://scenes/components/hitbox_component.gd" id="8_vjlpj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3fov1"]
 animations = [{
@@ -43,7 +44,7 @@ animations = [{
 radius = 48.0
 
 [node name="Raccoon1" type="CharacterBody2D" unique_id=1099982837]
-collision_layer = 2
+collision_layer = 4
 script = ExtResource("1_7nbo1")
 movement_speed = 500.0
 metadata/_custom_type_script = "uid://cm8xa62iojq0x"
@@ -59,6 +60,15 @@ shape = SubResource("CircleShape2D_rp24y")
 [node name="HealthComponent" type="Node" parent="." unique_id=810016079]
 script = ExtResource("3_fjq04")
 metadata/_custom_type_script = "uid://cqnbkier15avq"
+
+[node name="HitboxComponent" type="Area2D" parent="." unique_id=980535771]
+collision_layer = 4
+collision_mask = 8
+script = ExtResource("8_vjlpj")
+metadata/_custom_type_script = "uid://d0y3o51r8gh1i"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=936438624]
+shape = SubResource("CircleShape2D_rp24y")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1557556973]
 zoom = Vector2(0.5, 0.5)

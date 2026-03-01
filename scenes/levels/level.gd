@@ -29,6 +29,7 @@ func _on_door_used(door: Door):
 	var idx = doors.find(door)
 	if doors.size() > idx + 1:
 		Game.player.position = doors[idx + 1].position
+	else: Game.ui.get_node("%WinScreen").show()
 
 
 func enable():

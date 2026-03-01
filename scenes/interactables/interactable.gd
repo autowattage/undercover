@@ -17,6 +17,7 @@ func _process(_delta: float) -> void:
 	if interactable:
 		if Input.is_action_just_released("interact"):
 			_interact()
+			print("akbfj")
 		#$Label.text = "interact [E]"
 		#if Input.is_action_just_pressed("interact"):
 			#self.interact()

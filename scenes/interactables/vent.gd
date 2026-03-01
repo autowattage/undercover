@@ -4,7 +4,8 @@ class_name Vent
 
 func _interact():
 	#print("vent used")
-	print(get_parent())
+	#print(get_parent())
+	Game.player_vented.emit()
 
 	if Game.sublevel_active:
 		#Game.player.reparent( Game.level)

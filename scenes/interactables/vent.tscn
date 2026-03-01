@@ -7,8 +7,8 @@
 size = Vector2(128, 128)
 
 [node name="Vent" type="Area2D" unique_id=473722560]
-collision_layer = 4
-collision_mask = 2
+collision_layer = 0
+collision_mask = 4
 script = ExtResource("1_7jxis")
 metadata/_custom_type_script = "uid://dpho4qo1duu5v"
 

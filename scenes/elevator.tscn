@@ -3,19 +3,38 @@
 [ext_resource type="Script" uid="uid://d3cdyxfft84p2" path="res://scripts/elevator.gd" id="1_8lbij"]
 [ext_resource type="Texture2D" uid="uid://3a1eexy2sl7s" path="res://assets/elevator.png" id="1_8o2wm"]
 
-[node name="elevator" type="Node2D" unique_id=874072024]
+[node name="Elevator" type="Control" unique_id=1085302242]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_8lbij")
 
 [node name="bg" type="ColorRect" parent="." unique_id=1524095527]
+layout_mode = 0
 offset_right = 1950.0
 offset_bottom = 1113.0
 color = Color(0, 0, 0, 1)
 
-[node name="elevator" type="Sprite2D" parent="." unique_id=1151142731]
-position = Vector2(960, 540)
+[node name="elevator" type="TextureRect" parent="." unique_id=697946316]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -500.0
+offset_right = 400.00012
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_8o2wm")
 
 [node name="black-overlay" type="ColorRect" parent="." unique_id=743261507]
+layout_mode = 0
 offset_right = 1950.0
 offset_bottom = 1113.0
 color = Color(0, 0, 0, 1)

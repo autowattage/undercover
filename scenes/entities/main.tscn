@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://7ge0dqsx380x" path="res://scenes/levels/level.tscn" id="1_cj8ld"]
 [ext_resource type="PackedScene" uid="uid://mhov8ypmv2rd" path="res://scenes/levels/sublevel.tscn" id="2_opkwl"]
 [ext_resource type="Texture2D" uid="uid://bbndaudv4g8tk" path="res://assets/icon.svg" id="3_iky1b"]
+[ext_resource type="Texture2D" uid="uid://vt1q2n8uydgx" path="res://assets/win.png" id="4_hll2s"]
+[ext_resource type="Texture2D" uid="uid://qg5f7582cyt3" path="res://assets/loss.png" id="4_q7uc4"]
 
 [node name="Node" type="Node" unique_id=367954716]
 
@@ -12,9 +14,9 @@ position = Vector2(110, -61)
 [node name="SubLevel" parent="." unique_id=1887091631 instance=ExtResource("2_opkwl")]
 visible = false
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=320824909]
+[node name="UI" type="CanvasLayer" parent="." unique_id=320824909]
 
-[node name="Control" type="Control" parent="CanvasLayer" unique_id=173182853]
+[node name="Control" type="Control" parent="UI" unique_id=173182853]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,22 +24,116 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control" unique_id=874182033]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Control" unique_id=874182033]
+visible = false
 layout_mode = 1
 offset_right = 392.0
 offset_bottom = 128.0
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/HBoxContainer" unique_id=1150685100]
+[node name="TextureRect" type="TextureRect" parent="UI/Control/HBoxContainer" unique_id=1150685100]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 texture = ExtResource("3_iky1b")
 
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Control/HBoxContainer" unique_id=1698624133]
+[node name="TextureRect2" type="TextureRect" parent="UI/Control/HBoxContainer" unique_id=1698624133]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 texture = ExtResource("3_iky1b")
 
-[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/Control/HBoxContainer" unique_id=737014407]
+[node name="TextureRect3" type="TextureRect" parent="UI/Control/HBoxContainer" unique_id=737014407]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 texture = ExtResource("3_iky1b")
+
+[node name="TimerLabel" type="Label" parent="UI/Control" unique_id=299812234]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LoseScreen" type="Control" parent="UI/Control" unique_id=847185313]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="UI/Control/LoseScreen" unique_id=2011567690]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="UI/Control/LoseScreen" unique_id=1827575830]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_q7uc4")
+
+[node name="Label2" type="Label" parent="UI/Control/LoseScreen" unique_id=320336248]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -555.0
+offset_right = 555.0
+offset_bottom = 175.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 128
+text = "You Got Captured"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WinScreen" type="Control" parent="UI/Control" unique_id=1606560489]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/Control/WinScreen" unique_id=15306192]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_hll2s")
+
+[node name="Label" type="Label" parent="UI/Control/WinScreen" unique_id=1217849606]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -555.0
+offset_right = 555.0
+offset_bottom = 175.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 128
+text = "You Escaped!  YAY"
+horizontal_alignment = 1
+vertical_alignment = 1

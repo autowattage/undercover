@@ -5,7 +5,7 @@ class_name PlayerEntity
 signal item_used
 
 const JUMP_VELOCITY = 600.0
-const GRAVITY = 980.0
+#var GRAVITY = 980.0
 
 #var state := State.IDLE
 #var action := Action.NONE

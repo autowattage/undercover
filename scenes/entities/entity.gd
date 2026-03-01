@@ -22,6 +22,8 @@ enum Action {
 	JUMP_ATTACK,
 }
 
+var GRAVITY = 980.0
+
 var state := State.IDLE
 var action := Action.NONE
 
@@ -111,10 +113,13 @@ func _on_health_zero():
 func kill():
 	#print(self, " killed.")
 	if has_node("Sprite2D"): $Sprite2D.hide()
-	if has_node("HitboxComponent"): $HitboxComponent.queue_free()
-	if has_node("CollisionShape2D"): $CollisionShape2D.queue_free()
+	if has_node("HitboxComponent"):
+		$HitboxComponent.queue_free()
+	if has_node("CollisionShape2D"):
+		$CollisionShape2D.queue_free()
 	self.velocity = Vector2.ZERO
 
+	GRAVITY = 0.0
 	#if self is Player: get_parent().game_loss()
 	entity_death.emit( self )
 	if DeathParticles:
